@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Compliance &amp; Audit — From Requirements to Confidence</title>
+    <meta name="description"
+        content="Compliance & audit services to assess, validate and strengthen your controls, with practical insights from certified experts." />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+        }
+
+        body {
+            margin: 0;
+            background: #05071C;
+            color: #fff;
+            font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ---------- Hero Section Layout & Sizing ---------- */
+        .hero {
+            position: relative;
+            min-height: 540px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #05071C;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                min-height: 520px;
+                align-items: flex-start;
+            }
+        }
+
+        /* ---------- Particles Layer ---------- */
+        #particles-js {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        #particles-js canvas {
+            display: block;
+            pointer-events: auto;
+        }
+
+        /* ---------- Background Atmosphere ---------- */
+        .bg {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bg-glows {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 65% at 64% 42%, rgba(43, 63, 150, .5) 0%, rgba(23, 32, 86, .28) 45%, rgba(6, 10, 34, 0) 75%),
+                radial-gradient(ellipse 45% 40% at 88% 8%, rgba(59, 79, 201, .32) 0%, rgba(6, 10, 34, 0) 70%),
+                radial-gradient(ellipse 40% 45% at 8% 95%, rgba(30, 42, 110, .42) 0%, rgba(6, 10, 34, 0) 70%);
+        }
+
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            opacity: .14;
+            background-image:
+                linear-gradient(rgba(122, 142, 220, .4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(122, 142, 220, .4) 1px, transparent 1px);
+            background-size: 54px 54px;
+            -webkit-mask-image: radial-gradient(ellipse 85% 75% at 58% 45%, #000 25%, transparent 72%);
+            mask-image: radial-gradient(ellipse 85% 75% at 58% 45%, #000 25%, transparent 72%);
+        }
+
+        .bg-orbits {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .bg-top {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 96px;
+            background: linear-gradient(180deg, rgba(3, 5, 18, .85), rgba(3, 5, 18, 0));
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: #BFD0FF;
+            box-shadow: 0 0 6px 1px rgba(170, 195, 255, .55);
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: #F5B54A;
+            box-shadow: 0 0 14px 4px rgba(245, 181, 74, .5);
+            animation: pulse 3.2s ease-in-out infinite;
+        }
+
+        /* ---------- Container & Typography ---------- */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1360px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            padding: 48px 24px 36px;
+            pointer-events: none;
+        }
+
+        .copy {
+            width: 100%;
+        }
+
+        .copy>* {
+            pointer-events: auto;
+        }
+
+        .crumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .crumbs a {
+            font-size: 13px;
+            color: #8E97B8;
+            transition: color .2s;
+        }
+
+        .crumbs a:hover {
+            color: #fff;
+        }
+
+        .crumbs .sep {
+            font-size: 12px;
+            color: #4E5A85;
+        }
+
+        .crumbs .current {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        h1.headline {
+            margin: 20px 0 0;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+            font-size: clamp(30px, 3.5vw, 56px);
+        }
+
+        .headline .accent {
+            color: #8B85F3;
+            text-shadow: 0 0 32px rgba(139, 133, 243, .45);
+        }
+
+        .lead {
+            margin: 18px 0 0;
+            max-width: 480px;
+            font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #A9B1CE;
+        }
+
+        /* ---------- Illustration Canvas & Responsive Sizing ---------- */
+        .art {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            pointer-events: none;
+        }
+
+        .art-scale {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 640px;
+            height: 440px;
+            transform: translateX(-50%) scale(.48);
+            transform-origin: top center;
+        }
+
+        .canvas {
+            position: relative;
+            width: 640px;
+            height: 440px;
+        }
+
+        @media (max-width: 639px) {
+            .container {
+                padding: 28px 18px 20px;
+                gap: 14px;
+            }
+
+            h1.headline {
+                font-size: clamp(28px, 8.5vw, 38px);
+                margin-top: 14px;
+            }
+
+            .lead {
+                font-size: 14px;
+                line-height: 1.6;
+                max-width: 90%;
+                margin-top: 12px;
+            }
+
+            .art {
+                margin-top: 56px;
+                height: 230px;
+            }
+
+            .art-scale {
+                transform: translateX(-50%) scale(.48);
+            }
+        }
+
+        @media (min-width: 640px) and (max-width: 767px) {
+            .container {
+                padding: 36px 24px 28px;
+                gap: 20px;
+            }
+
+            .art {
+                margin-top: 40px;
+                height: 290px;
+            }
+
+            .art-scale {
+                transform: translateX(-50%) scale(.62);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .container {
+                padding: 44px 32px 32px;
+                gap: 22px;
+            }
+
+            .art {
+                margin-top: 52px;
+                height: 350px;
+            }
+
+            .art-scale {
+                transform: translateX(-50%) scale(.74);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+                padding: 56px 40px;
+            }
+
+            .copy {
+                width: 43%;
+                flex-shrink: 0;
+            }
+
+            .art {
+                width: 57%;
+                height: 420px;
+                margin-top: 0;
+            }
+
+            .art-scale {
+                left: auto;
+                right: 0;
+                top: 0;
+                transform: scale(.88);
+                transform-origin: top right;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .art {
+                height: 440px;
+            }
+
+            .art-scale {
+                transform: scale(1);
+            }
+        }
+
+        /* ---------- Rotating 3D Globe ---------- */
+        .globe {
+            position: absolute;
+            left: 310px;
+            top: 16px;
+            width: 320px;
+            height: 320px;
+            opacity: .88;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .globe::before {
+            content: "";
+            position: absolute;
+            inset: 18px;
+            border-radius: 50%;
+            background: rgba(59, 85, 196, .35);
+            filter: blur(36px);
+        }
+
+        .globe canvas {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ---------- Document Stack ---------- */
+        .docwrap {
+            position: absolute;
+            left: 150px;
+            top: 10px;
+            width: 220px;
+            height: 330px;
+            z-index: 14;
+            perspective: 1100px;
+        }
+
+        .docpane {
+            position: absolute;
+            left: -36px;
+            top: -4px;
+            width: 300px;
+            height: 330px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .07);
+            background: rgba(255, 255, 255, .035);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        .doc3d {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: rotateY(-9deg) rotateX(2deg);
+            transform-style: preserve-3d;
+        }
+
+        .ghost {
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+        }
+
+        .ghost.g1 {
+            transform: translate(-14px, -14px);
+            border: 1px solid rgba(255, 255, 255, .2);
+            background: rgba(255, 255, 255, .14);
+        }
+
+        .ghost.g2 {
+            transform: translate(-28px, -28px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            background: rgba(255, 255, 255, .07);
+        }
+
+        .doc {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, .7);
+            background: linear-gradient(180deg, #FBFCFF, #F3F6FE 50%, #E5EAF9);
+            padding: 20px;
+            box-shadow: 0 34px 70px rgba(2, 6, 24, .65);
+            overflow: visible;
+        }
+
+        .doc h2 {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -.01em;
+            color: #181E3E;
+        }
+
+        .doc .lines {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .line {
+            display: block;
+            height: 7px;
+            border-radius: 99px;
+            background: rgba(49, 64, 110, .25);
+        }
+
+        .line.w72 {
+            width: 72%;
+        }
+
+        .line.lastline {
+            margin-top: 16px;
+            width: 55%;
+            background: rgba(49, 64, 110, .2);
+        }
+
+        .doc .checks {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .checkrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkrow .line {
+            flex: 1;
+            background: rgba(49, 64, 110, .2);
+        }
+
+        .cbox {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            border: 1px solid rgba(154, 147, 245, .8);
+            background: rgba(124, 111, 232, .25);
+        }
+
+        .docshadow {
+            position: absolute;
+            bottom: -26px;
+            left: 4px;
+            width: 210px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .5);
+            filter: blur(18px);
+        }
+
+        /* ---------- Integrated Gold Certificate Seal ---------- */
+        .seal {
+            position: absolute;
+            right: -2px;
+            bottom: 28px;
+            width: 52px;
+            height: 52px;
+            z-index: 25;
+            pointer-events: none;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 30px;
+            width: 16px;
+            height: 56px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+            box-shadow: 0 4px 10px rgba(60, 35, 5, .5);
+            z-index: 1;
+        }
+
+        .ribbon.r1 {
+            left: 8px;
+            background: linear-gradient(180deg, #CE9238, #6E450F);
+            transform: rotate(-15deg);
+            transform-origin: top center;
+        }
+
+        .ribbon.r2 {
+            left: 28px;
+            background: linear-gradient(180deg, #E6B560, #8A5918);
+            transform: rotate(15deg);
+            transform-origin: top center;
+        }
+
+        .medallion {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 35% 28%, #FFE29F 0%, #F5B853 36%, #C67F26 72%, #8C4E0A 100%);
+            box-shadow: 0 8px 22px rgba(230, 170, 70, .45), 0 2px 6px rgba(0, 0, 0, .35), inset 0 2px 4px rgba(255, 255, 255, .7), inset 0 -2px 5px rgba(100, 50, 5, .6);
+            z-index: 2;
+        }
+
+        .medallion .ring {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px dashed rgba(138, 90, 28, .8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------- Glass Badges (Floating Service Concept Labels) ---------- */
+        .badges {
+            position: absolute;
+            left: 356px;
+            top: 46px;
+            z-index: 22;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .badge-w {
+            animation: badgeMicroFloat 9s ease-in-out infinite;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 132px;
+            height: 42px;
+            padding: 0 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .2);
+            background: rgba(255, 255, 255, .09);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            color: #fff;
+            box-shadow: 0 10px 26px rgba(8, 12, 40, .5);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            user-select: none;
+        }
+
+        @keyframes badgeMicroFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* ---------- Secondary Chart Card (Left) ---------- */
+        .chartcard {
+            position: absolute;
+            left: 12px;
+            top: 70px;
+            z-index: 12;
+            animation: chartMicroFloat 10s ease-in-out infinite;
+            animation-delay: 1.6s;
+            pointer-events: none;
+        }
+
+        .chartcard .inner {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 142px;
+            height: 132px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(255, 255, 255, .07);
+            padding: 14px;
+            box-shadow: 0 16px 40px rgba(5, 9, 32, .5);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+
+        .minibars {
+            display: flex;
+            align-items: flex-end;
+            gap: 6px;
+        }
+
+        .minibars span {
+            width: 9px;
+            border-radius: 3px 3px 0 0;
+            background: linear-gradient(0deg, rgba(90, 78, 214, .8), #B0A6FF);
+            animation: miniBarPulse 4.2s ease-in-out infinite;
+        }
+
+        .minibars span:nth-child(1) { height: 20px; animation-delay: 0.2s; }
+        .minibars span:nth-child(2) { height: 30px; animation-delay: 0.6s; }
+        .minibars span:nth-child(3) { height: 42px; animation-delay: 1.0s; }
+        .minibars span:nth-child(4) { height: 56px; animation-delay: 1.4s; }
+
+        @keyframes miniBarPulse {
+            0%, 100% {
+                transform: scaleY(1);
+                opacity: .85;
+            }
+            14% {
+                transform: scaleY(1.08);
+                opacity: 1;
+            }
+            28% {
+                transform: scaleY(1);
+                opacity: .85;
+            }
+        }
+
+        @keyframes chartMicroFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* ---------- Secondary Checklist Card (Right) ---------- */
+        .listcard {
+            position: absolute;
+            left: 494px;
+            top: 86px;
+            z-index: 12;
+            animation: chartMicroFloat 10s ease-in-out infinite;
+            animation-delay: .8s;
+            pointer-events: none;
+        }
+
+        .listcard .inner {
+            width: 148px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(255, 255, 255, .07);
+            padding: 14px;
+            box-shadow: 0 16px 40px rgba(5, 9, 32, .5);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+
+        .listrow {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        .listrow+.listrow {
+            margin-top: 13px;
+        }
+
+        .cbox.sm {
+            width: 16px;
+            height: 16px;
+        }
+
+        .lbars {
+            flex: 1;
+            padding-top: 2px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .lbars i {
+            display: block;
+            height: 5px;
+            border-radius: 99px;
+            background: rgba(255, 255, 255, .35);
+        }
+
+        .lbars i.short {
+            width: 66%;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        /* ---------- Sequential Rising Analysis Bars ---------- */
+        .rising {
+            position: absolute;
+            left: 398px;
+            bottom: 24px;
+            z-index: 13;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .rising span {
+            width: 21px;
+            border-radius: 5px 5px 0 0;
+            border-top: 1px solid rgba(255, 255, 255, .55);
+            background: linear-gradient(0deg, rgba(74, 62, 188, .85), rgba(109, 95, 224, .92) 50%, #B3A9FF);
+            box-shadow: 0 0 18px rgba(139, 133, 243, .4), inset -3px 0 6px rgba(10, 8, 50, .35);
+            transform-origin: bottom center;
+            will-change: transform;
+            animation: barSequentialRise 3.0s ease-in-out infinite;
+        }
+
+        .rising .bar-1 { height: 26px; animation-delay: 0.00s; }
+        .rising .bar-2 { height: 40px; animation-delay: 0.45s; }
+        .rising .bar-3 { height: 56px; animation-delay: 0.90s; }
+        .rising .bar-4 { height: 74px; animation-delay: 1.35s; }
+        .rising .bar-5 { height: 94px; animation-delay: 1.80s; }
+
+        @keyframes barSequentialRise {
+            0%, 100% {
+                transform: translateY(0);
+                filter: brightness(1);
+            }
+            14% {
+                transform: translateY(-9px);
+                filter: brightness(1.18);
+                box-shadow: 0 0 24px rgba(179, 169, 255, .6), inset -3px 0 6px rgba(10, 8, 50, .25);
+            }
+            28% {
+                transform: translateY(0);
+                filter: brightness(1);
+                box-shadow: 0 0 18px rgba(139, 133, 243, .4), inset -3px 0 6px rgba(10, 8, 50, .35);
+            }
+        }
+
+        /* ---------- Magnifying Glass (Static, Premium Focus) ---------- */
+        .mag {
+            position: absolute;
+            left: 142px;
+            top: 232px;
+            z-index: 30;
+            pointer-events: none;
+        }
+
+        .mag .box {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        .mag-glow {
+            position: absolute;
+            inset: -16px;
+            border-radius: 50%;
+            background: rgba(124, 111, 232, .2);
+            filter: blur(32px);
+            animation: pulse 3.2s ease-in-out infinite;
+        }
+
+        .sheet {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .sheet i {
+            display: block;
+            height: 6px;
+            border-radius: 99px;
+        }
+
+        .sheet.s1 {
+            left: -52px;
+            top: 98px;
+            width: 158px;
+            transform: rotate(-16deg);
+            border: 1px solid rgba(255, 255, 255, .6);
+            background: linear-gradient(135deg, rgba(255, 255, 255, .95), #DDE4FA);
+            box-shadow: 0 18px 40px rgba(2, 6, 24, .6);
+        }
+
+        .sheet.s2 {
+            left: 52px;
+            top: 118px;
+            width: 112px;
+            transform: rotate(9deg);
+            padding: 11px;
+            border: 1px solid rgba(255, 255, 255, .5);
+            background: linear-gradient(135deg, rgba(255, 255, 255, .9), #D5DDF6);
+            box-shadow: 0 14px 34px rgba(2, 6, 24, .55);
+        }
+
+        .w100 { width: 100%; }
+        .w83 { width: 83%; }
+        .w75 { width: 75%; }
+        .w70 { width: 70%; }
+        .w66 { width: 66%; }
+
+        .pu { background: rgba(124, 111, 232, .7); }
+        .pu6 { background: rgba(124, 111, 232, .6); }
+        .g60 { background: rgba(154, 166, 216, .6); }
+        .g50 { background: rgba(154, 166, 216, .5); }
+        .g45 { background: rgba(154, 166, 216, .45); }
+
+        .handle {
+            position: absolute;
+            left: -108px;
+            top: 116px;
+            width: 132px;
+            height: 22px;
+            border-radius: 99px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: linear-gradient(180deg, #3D4774, #151B40 50%, #060822);
+            box-shadow: 0 10px 24px rgba(2, 4, 16, .7);
+            transform: rotate(-42deg);
+            transform-origin: right center;
+        }
+
+        .collar {
+            position: absolute;
+            left: 8px;
+            top: 115px;
+            width: 16px;
+            height: 24px;
+            border-radius: 99px;
+            background: linear-gradient(180deg, #7C87B4, #2A3258);
+            transform: rotate(-42deg);
+            transform-origin: right center;
+        }
+
+        .rim {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 11px;
+            background: linear-gradient(135deg, #5A6694 0%, #1E2549 42%, #06081E 100%);
+            box-shadow: 0 24px 50px rgba(2, 4, 16, .7), inset 0 2px 3px rgba(255, 255, 255, .45);
+        }
+
+        .glass {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .15);
+            background: rgba(26, 36, 82, .2);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            box-shadow: inset 0 0 30px rgba(139, 133, 243, .3), inset 0 0 6px rgba(255, 255, 255, .12);
+        }
+
+        .glint {
+            position: absolute;
+            left: 16px;
+            top: 18px;
+            width: 50px;
+            height: 34px;
+            transform: rotate(-32deg);
+            border-radius: 50%;
+            border-top: 3px solid rgba(255, 255, 255, .5);
+            filter: blur(1px);
+        }
+
+        .arc {
+            position: absolute;
+            inset: -7px;
+            width: calc(100% + 14px);
+            height: calc(100% + 14px);
+        }
+
+        /* ---------- Ambient & Utility Animations ---------- */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: .55;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: .08;
+            }
+            50% {
+                opacity: .85;
+            }
+        }
+
+        /* ---------- Marquee / Ticker Under Hero ---------- */
+        .ticker-track-container {
+            position: relative;
+            z-index: 4;
+            width: 100%;
+            height: 56px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            background: #040618;
+            color: #C3CBEE;
+            font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+            font-weight: 600;
+            font-size: clamp(.76rem, 1.0vw, .90rem);
+            letter-spacing: .14em;
+            border-top: 1px solid rgba(124, 111, 232, .24);
+            border-bottom: 1px solid rgba(124, 111, 232, .12);
+            box-shadow: 0 4px 24px rgba(2, 4, 18, .6);
+            user-select: none;
+        }
+
+        .ticker-track-container:hover .ticker-track,
+        .ticker-track-container:focus-within .ticker-track {
+            animation-play-state: paused;
+        }
+
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            white-space: nowrap;
+            animation: slide var(--dur, 50s) linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes slide {
+            to {
+                transform: translate3d(calc(-1 * var(--dist, 1000px)), 0, 0);
+            }
+        }
+
+        .ticker-group {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 1.8rem;
+            padding-right: 1.8rem;
+        }
+
+        .ticker-group a {
+            color: #B9C5F0;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 2px solid transparent;
+            padding: 0.2rem 0;
+            transition: color .2s, border-color .2s;
+        }
+
+        .ticker-group a:hover {
+            color: #FFFFFF;
+            border-color: #8B85F3;
+            text-shadow: 0 0 12px rgba(139, 133, 243, .6);
+        }
+
+        .ticker-group a:focus-visible {
+            outline: 2px solid #8B85F3;
+            outline-offset: 3px;
+        }
+
+        .ticker-separator {
+            width: 14px;
+            height: 14px;
+            flex: 0 0 auto;
+            color: #8B85F3;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---------- Paused States & Performance Controls ---------- */
+        .hero.is-paused *,
+        body.is-hidden .ticker-track {
+            animation-play-state: paused !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .star,
+            .orb,
+            .badge-w,
+            .chartcard,
+            .listcard,
+            .rising span,
+            .minibars span,
+            .mag-glow,
+            .ticker-track {
+                animation: none !important;
+            }
+
+            .ticker-track-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="hero" id="hero">
+            <!-- Background atmosphere -->
+            <div class="bg" aria-hidden="true">
+                <div class="bg-glows"></div>
+                <div class="bg-grid"></div>
+                <svg class="bg-orbits" viewBox="0 0 1536 520" preserveAspectRatio="xMidYMid slice" fill="none">
+                    <defs>
+                        <linearGradient id="orbitA" x1="0" y1="1" x2="1" y2="0">
+                            <stop offset="0" stop-color="#7C6FE8" stop-opacity="0" />
+                            <stop offset="0.45" stop-color="#7C6FE8" stop-opacity="0.75" />
+                            <stop offset="1" stop-color="#3B4FC9" stop-opacity="0.25" />
+                        </linearGradient>
+                        <linearGradient id="orbitB" x1="0" y1="1" x2="1" y2="0">
+                            <stop offset="0" stop-color="#5468D8" stop-opacity="0" />
+                            <stop offset="0.55" stop-color="#8B85F3" stop-opacity="0.55" />
+                            <stop offset="1" stop-color="#F5B54A" stop-opacity="0.35" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M-80 452 C 340 316, 780 500, 1230 224 S 1580 60, 1620 34" stroke="url(#orbitA)"
+                        stroke-width="1.6" style="filter:drop-shadow(0 0 6px rgba(124,111,232,.55))" />
+                    <path d="M-80 492 C 420 380, 880 436, 1360 148" stroke="url(#orbitB)" stroke-width="1.2"
+                        opacity="0.8" />
+                </svg>
+                <span class="star" style="left:8%;  top:22%; width:2px; height:2px;"></span>
+                <span class="star" style="left:16%; top:68%; width:3px; height:3px; animation-delay:1.1s"></span>
+                <span class="star" style="left:24%; top:38%; width:2px; height:2px; animation-delay:2.2s"></span>
+                <span class="star" style="left:31%; top:12%; width:2px; height:2px; animation-delay:.6s"></span>
+                <span class="star" style="left:38%; top:80%; width:3px; height:3px; animation-delay:1.7s"></span>
+                <span class="star" style="left:45%; top:26%; width:2px; height:2px; animation-delay:2.8s"></span>
+                <span class="star" style="left:52%; top:64%; width:2px; height:2px; animation-delay:.3s"></span>
+                <span class="star" style="left:58%; top:14%; width:3px; height:3px; animation-delay:1.4s"></span>
+                <span class="star" style="left:66%; top:82%; width:2px; height:2px; animation-delay:2.5s"></span>
+                <span class="star" style="left:72%; top:40%; width:2px; height:2px; animation-delay:.9s"></span>
+                <span class="star" style="left:80%; top:70%; width:3px; height:3px; animation-delay:1.9s"></span>
+                <span class="star" style="left:86%; top:24%; width:2px; height:2px; animation-delay:2.9s"></span>
+                <span class="star" style="left:92%; top:56%; width:2px; height:2px; animation-delay:1.2s"></span>
+                <span class="star" style="left:95%; top:12%; width:3px; height:3px; animation-delay:.4s"></span>
+                <span class="orb" style="left:20%; top:86%; width:7px; height:7px;"></span>
+                <span class="orb" style="left:44%; top:72%; width:9px; height:9px; animation-delay:.8s"></span>
+                <span class="orb" style="left:63%; top:30%; width:7px; height:7px; animation-delay:1.6s"></span>
+                <span class="orb" style="left:77%; top:58%; width:8px; height:8px; animation-delay:2.4s"></span>
+                <span class="orb" style="left:89%; top:38%; width:6px; height:6px; animation-delay:1.2s"></span>
+                <div class="bg-top"></div>
+            </div>
+
+            <!-- Constellation / Network Particle System -->
+            <div id="particles-js" aria-hidden="true"></div>
+
+            <div class="container">
+                <!-- Copy Column -->
+                <div class="copy">
+                    <nav class="crumbs" aria-label="Breadcrumb">
+                        <a href="#">Home</a>
+                        <span class="sep" aria-hidden="true">&gt;</span>
+                        <a href="#">Services</a>
+                        <span class="sep" aria-hidden="true">&gt;</span>
+                        <span class="current" aria-current="page">Compliance &amp; Audit</span>
+                    </nav>
+
+                    <h1 class="headline">
+                        From Requirements<br />
+                        <span class="accent">to Confidence.</span>
+                    </h1>
+
+                    <p class="lead">
+                        Compliance &amp; audit services to assess, validate and strengthen
+                        your controls, with practical insights from certified experts.
+                    </p>
+                </div>
+
+                <!-- Illustration Canvas -->
+                <div class="art" aria-hidden="true">
+                    <div class="art-scale">
+                        <div class="canvas">
+
+                            <!-- 3D Rotating Globe -->
+                            <div class="globe">
+                                <canvas id="globe-canvas" width="400" height="400"></canvas>
+                            </div>
+
+                            <!-- Document Stack -->
+                            <div class="docwrap">
+                                <div class="docpane"></div>
+                                <div class="doc3d">
+                                    <div class="ghost g1"></div>
+                                    <div class="ghost g2"></div>
+                                    <div class="doc">
+                                        <h2>Compliance</h2>
+                                        <div class="lines">
+                                            <i class="line"></i>
+                                            <i class="line"></i>
+                                            <i class="line w72"></i>
+                                        </div>
+                                        <div class="checks">
+                                            <div class="checkrow">
+                                                <span class="cbox"><svg width="11" height="11" viewBox="0 0 12 12"
+                                                        fill="none">
+                                                        <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF"
+                                                            stroke-width="1.9" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg></span>
+                                                <i class="line"></i>
+                                            </div>
+                                            <div class="checkrow">
+                                                <span class="cbox"><svg width="11" height="11" viewBox="0 0 12 12"
+                                                        fill="none">
+                                                        <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF"
+                                                            stroke-width="1.9" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg></span>
+                                                <i class="line"></i>
+                                            </div>
+                                            <div class="checkrow">
+                                                <span class="cbox"><svg width="11" height="11" viewBox="0 0 12 12"
+                                                        fill="none">
+                                                        <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF"
+                                                            stroke-width="1.9" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg></span>
+                                                <i class="line"></i>
+                                            </div>
+                                            <div class="checkrow">
+                                                <span class="cbox"><svg width="11" height="11" viewBox="0 0 12 12"
+                                                        fill="none">
+                                                        <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF"
+                                                            stroke-width="1.9" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg></span>
+                                                <i class="line"></i>
+                                            </div>
+                                        </div>
+                                        <i class="line lastline"></i>
+
+                                        <!-- Integrated Gold Certificate Seal -->
+                                        <div class="seal">
+                                            <span class="ribbon r1"></span>
+                                            <span class="ribbon r2"></span>
+                                            <div class="medallion">
+                                                <div class="ring">
+                                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                                                        <path
+                                                            d="M10 2.2l2.3 4.7 5.2.8-3.8 3.7.9 5.2-4.6-2.4-4.6 2.4.9-5.2-3.8-3.7 5.2-.8L10 2.2z"
+                                                            fill="#7A450A" />
+                                                        <path
+                                                            d="M10 4.2l1.6 3.4 3.7.5-2.7 2.6.6 3.7-3.2-1.7-3.2 1.7.6-3.7-2.7-2.6 3.7-.5L10 4.2z"
+                                                            fill="#FFEAA6" opacity="0.6" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="docshadow"></div>
+                            </div>
+
+                            <!-- Secondary Chart Card (Left) -->
+                            <div class="chartcard">
+                                <div class="inner">
+                                    <div class="minibars">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <svg width="52" height="52" viewBox="0 0 48 48">
+                                        <circle cx="24" cy="24" r="17" fill="none" stroke="#39456F" stroke-width="8"
+                                            opacity=".55" />
+                                        <circle cx="24" cy="24" r="17" fill="none" stroke="#8B85F3" stroke-width="8"
+                                            stroke-dasharray="66 107" stroke-linecap="round"
+                                            transform="rotate(-90 24 24)" />
+                                        <circle cx="24" cy="24" r="17" fill="none" stroke="#CDC7FF" stroke-width="8"
+                                            stroke-dasharray="26 147" stroke-dashoffset="-74" stroke-linecap="round"
+                                            transform="rotate(-90 24 24)" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Glass Badges: Floating Service Concepts -->
+                            <div class="badges">
+                                <div class="badge-w">
+                                    <div class="badge" style="margin-left:6px">Compliance</div>
+                                </div>
+                                <div class="badge-w" style="animation-delay:.9s">
+                                    <div class="badge">Audit</div>
+                                </div>
+                                <div class="badge-w" style="animation-delay:1.8s">
+                                    <div class="badge" style="margin-left:4px">Assessment</div>
+                                </div>
+                                <div class="badge-w" style="animation-delay:2.7s">
+                                    <div class="badge">Assurance</div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Checklist Card (Right) -->
+                            <div class="listcard">
+                                <div class="inner">
+                                    <div class="listrow">
+                                        <span class="cbox sm"><svg width="10" height="10" viewBox="0 0 12 12"
+                                                fill="none">
+                                                <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF" stroke-width="1.9"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span>
+                                        <span class="lbars"><i></i><i class="short"></i></span>
+                                    </div>
+                                    <div class="listrow">
+                                        <span class="cbox sm"><svg width="10" height="10" viewBox="0 0 12 12"
+                                                fill="none">
+                                                <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF" stroke-width="1.9"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span>
+                                        <span class="lbars"><i></i><i class="short"></i></span>
+                                    </div>
+                                    <div class="listrow">
+                                        <span class="cbox sm"><svg width="10" height="10" viewBox="0 0 12 12"
+                                                fill="none">
+                                                <path d="M2.5 6.4 5 8.9 9.5 3.4" stroke="#C8C3FF" stroke-width="1.9"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span>
+                                        <span class="lbars"><i></i><i class="short"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sequential Rising Analysis Bars -->
+                            <div class="rising">
+                                <span class="bar-1"></span>
+                                <span class="bar-2"></span>
+                                <span class="bar-3"></span>
+                                <span class="bar-4"></span>
+                                <span class="bar-5"></span>
+                            </div>
+
+                            <!-- Magnifying Glass (Static, Premium Focus) -->
+                            <div class="mag">
+                                <div class="box">
+                                    <span class="mag-glow"></span>
+                                    <div class="sheet s1">
+                                        <i class="pu w100"></i>
+                                        <i class="g60 w83"></i>
+                                        <i class="g45 w66"></i>
+                                    </div>
+                                    <div class="sheet s2">
+                                        <i class="pu6 w100"></i>
+                                        <i class="g50 w75"></i>
+                                    </div>
+                                    <span class="handle"></span>
+                                    <span class="collar"></span>
+                                    <div class="rim">
+                                        <div class="glass"></div>
+                                    </div>
+                                    <span class="glint"></span>
+                                    <svg class="arc" viewBox="0 0 164 164" fill="none">
+                                        <circle cx="82" cy="82" r="77" stroke="#A8A2FF" stroke-width="3.5"
+                                            stroke-linecap="round" stroke-dasharray="170 314" stroke-dashoffset="-30"
+                                            style="filter:drop-shadow(0 0 8px rgba(139,133,243,1))" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seamless Marquee / Ticker -->
+        <div class="ticker-track-container" id="identity" aria-label="Compliance &amp; Audit Capabilities">
+            <div class="ticker-track" id="ticker-track"></div>
+        </div>
+    </main>
+
+    <!-- particles.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ==========================================================================
+           3D Rotating Wireframe / Dotted Globe
+           ========================================================================== */
+        const Globe3D = {
+            canvas: null,
+            ctx: null,
+            animId: null,
+            angle: 0.25,
+            running: false,
+            // 28-second full revolution (linear, smooth, infinite)
+            speed: (2 * Math.PI) / (28 * 60),
+
+            // Surface network nodes & hubs
+            hubs: [
+                { lat: 0.52, lon: 0.8 },
+                { lat: 0.85, lon: 2.7 },
+                { lat: -0.22, lon: 4.1 },
+                { lat: 0.35, lon: 5.3 },
+                { lat: -0.65, lon: 1.6 }
+            ],
+
+            init() {
+                this.canvas = document.getElementById('globe-canvas');
+                if (!this.canvas) return;
+                this.ctx = this.canvas.getContext('2d');
+                if (!this.ctx) return;
+
+                // Handle HiDPI displays crispness
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                this.canvas.width = 400 * dpr;
+                this.canvas.height = 400 * dpr;
+                this.ctx.scale(dpr, dpr);
+
+                if (!reduced) {
+                    this.start();
+                } else {
+                    this.render();
+                }
+            },
+
+            render() {
+                const ctx = this.ctx;
+                if (!ctx) return;
+
+                const cx = 200, cy = 200, R = 188;
+                const tilt = 0.24; // ~14 degree tilt around X-axis for realistic orientation
+                const cosTilt = Math.cos(tilt);
+                const sinTilt = Math.sin(tilt);
+
+                ctx.clearRect(0, 0, 400, 400);
+
+                // 1. Outer boundary clipping
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(cx, cy, R, 0, Math.PI * 2);
+                ctx.clip();
+
+                // 2. Deep sphere volumetric gradient
+                const bgGrad = ctx.createRadialGradient(cx - 50, cy - 65, 20, cx, cy, R);
+                bgGrad.addColorStop(0, '#31479E');
+                bgGrad.addColorStop(0.55, '#182458');
+                bgGrad.addColorStop(1, '#0A1030');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, 400, 400);
+
+                // Helper: project (lat, lon) with current rotation angle to 3D sphere coords
+                const project = (lat, lon) => {
+                    const l = lon + this.angle;
+                    const cosLat = Math.cos(lat);
+                    const sinLat = Math.sin(lat);
+                    const x0 = R * cosLat * Math.sin(l);
+                    const y0 = -R * sinLat;
+                    const z0 = R * cosLat * Math.cos(l);
+
+                    // Tilt around X
+                    const y = y0 * cosTilt - z0 * sinTilt;
+                    const z = y0 * sinTilt + z0 * cosTilt;
+                    return {
+                        x: cx + x0,
+                        y: cy + y,
+                        z: z
+                    };
+                };
+
+                // 3. Draw Parallels (Latitudes)
+                const latAngles = [-1.05, -0.55, 0, 0.55, 1.05];
+                latAngles.forEach(lat => {
+                    const isEquator = lat === 0;
+                    ctx.beginPath();
+                    const steps = 64;
+                    let first = true;
+                    for (let i = 0; i <= steps; i++) {
+                        const lon = (i / steps) * Math.PI * 2;
+                        const pt = project(lat, lon);
+                        // Subtle depth shading
+                        if (first) {
+                            ctx.moveTo(pt.x, pt.y);
+                            first = false;
+                        } else {
+                            ctx.lineTo(pt.x, pt.y);
+                        }
+                    }
+                    ctx.strokeStyle = isEquator ? 'rgba(110, 140, 240, 0.55)' : 'rgba(84, 111, 207, 0.38)';
+                    ctx.lineWidth = isEquator ? 1.4 : 1.0;
+                    ctx.stroke();
+                });
+
+                // 4. Draw Meridians (Longitudes)
+                const meridiansCount = 12;
+                for (let m = 0; m < meridiansCount; m++) {
+                    const lon = (m / meridiansCount) * Math.PI * 2;
+                    ctx.beginPath();
+                    const latSteps = 48;
+                    let firstFront = true;
+                    let isDrawingFront = false;
+
+                    for (let s = 0; s <= latSteps; s++) {
+                        const lat = -Math.PI / 2 + (s / latSteps) * Math.PI;
+                        const pt = project(lat, lon);
+
+                        if (pt.z >= -10) {
+                            if (!isDrawingFront) {
+                                ctx.moveTo(pt.x, pt.y);
+                                isDrawingFront = true;
+                            } else {
+                                ctx.lineTo(pt.x, pt.y);
+                            }
+                        } else {
+                            isDrawingFront = false;
+                        }
+                    }
+                    ctx.strokeStyle = 'rgba(95, 125, 225, 0.48)';
+                    ctx.lineWidth = 1.1;
+                    ctx.stroke();
+
+                    // Faint back lines for translucent 3D wireframe volume
+                    ctx.beginPath();
+                    let isDrawingBack = false;
+                    for (let s = 0; s <= latSteps; s++) {
+                        const lat = -Math.PI / 2 + (s / latSteps) * Math.PI;
+                        const pt = project(lat, lon);
+
+                        if (pt.z < -10) {
+                            if (!isDrawingBack) {
+                                ctx.moveTo(pt.x, pt.y);
+                                isDrawingBack = true;
+                            } else {
+                                ctx.lineTo(pt.x, pt.y);
+                            }
+                        } else {
+                            isDrawingBack = false;
+                        }
+                    }
+                    ctx.strokeStyle = 'rgba(60, 85, 175, 0.16)';
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+
+                // 5. Draw Surface Dots (Matrix points on the rotating sphere)
+                const dotLats = [-1.2, -0.9, -0.6, -0.3, 0, 0.3, 0.6, 0.9, 1.2];
+                dotLats.forEach(lat => {
+                    const cosLat = Math.cos(lat);
+                    const dotsInRing = Math.max(8, Math.round(28 * cosLat));
+                    for (let d = 0; d < dotsInRing; d++) {
+                        const lon = (d / dotsInRing) * Math.PI * 2;
+                        const pt = project(lat, lon);
+                        if (pt.z > 0) {
+                            const normZ = pt.z / R;
+                            const alpha = 0.22 + normZ * 0.45;
+                            const r = 1.0 + normZ * 0.7;
+                            ctx.beginPath();
+                            ctx.arc(pt.x, pt.y, r, 0, Math.PI * 2);
+                            ctx.fillStyle = `rgba(135, 165, 255, ${alpha.toFixed(2)})`;
+                            ctx.fill();
+                        }
+                    }
+                });
+
+                // 6. Draw Glowing Hub Nodes
+                this.hubs.forEach((hub, idx) => {
+                    const pt = project(hub.lat, hub.lon);
+                    if (pt.z > -15) {
+                        const normZ = Math.max(0, pt.z / R);
+                        const haloRadius = 12 * (0.6 + normZ * 0.5);
+                        const halo = ctx.createRadialGradient(pt.x, pt.y, 1, pt.x, pt.y, haloRadius);
+                        halo.addColorStop(0, `rgba(159, 192, 255, ${(0.85 * normZ).toFixed(2)})`);
+                        halo.addColorStop(0.5, `rgba(124, 150, 245, ${(0.35 * normZ).toFixed(2)})`);
+                        halo.addColorStop(1, 'rgba(100, 130, 240, 0)');
+
+                        ctx.beginPath();
+                        ctx.arc(pt.x, pt.y, haloRadius, 0, Math.PI * 2);
+                        ctx.fillStyle = halo;
+                        ctx.fill();
+
+                        ctx.beginPath();
+                        ctx.arc(pt.x, pt.y, 3.2, 0, Math.PI * 2);
+                        ctx.fillStyle = '#C8DDFF';
+                        ctx.shadowColor = 'rgba(159, 192, 255, 0.9)';
+                        ctx.shadowBlur = 8;
+                        ctx.fill();
+                        ctx.shadowBlur = 0;
+                    }
+                });
+
+                ctx.restore();
+
+                // 7. Outer silhouette ring with soft atmosphere
+                ctx.beginPath();
+                ctx.arc(cx, cy, R, 0, Math.PI * 2);
+                ctx.strokeStyle = '#7C93E8';
+                ctx.lineWidth = 1.5;
+                ctx.globalAlpha = 0.65;
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+            },
+
+            tick() {
+                if (!this.running) return;
+                this.angle = (this.angle + this.speed) % (Math.PI * 2);
+                this.render();
+                this.animId = requestAnimationFrame(() => this.tick());
+            },
+
+            start() {
+                if (reduced || this.running) return;
+                this.running = true;
+                this.animId = requestAnimationFrame(() => this.tick());
+            },
+
+            stop() {
+                this.running = false;
+                if (this.animId) {
+                    cancelAnimationFrame(this.animId);
+                    this.animId = null;
+                }
+            }
+        };
+
+        /* ==========================================================================
+           Constellation / Network Particle System
+           Sparse nodes + thin connecting proximity lines + Compliance & Audit colors
+           ========================================================================== */
+        const Particles = {
+            tier: null,
+            init() {
+                const w = innerWidth, t = w < 768 ? 'm' : w <= 1024 ? 't' : 'd';
+                if (t === this.tier) return;
+                this.tier = t;
+
+                try {
+                    this.pause();
+                    if (window.pJSDom && window.pJSDom.length) {
+                        window.pJSDom.forEach(d => {
+                            try {
+                                if (d && d.pJS && d.pJS.fn && d.pJS.fn.vendors && d.pJS.fn.vendors.destroypJS) {
+                                    d.pJS.fn.vendors.destroypJS();
+                                }
+                            } catch (e) { }
+                        });
+                        window.pJSDom = [];
+                    }
+                    const el = document.getElementById('particles-js');
+                    if (el) el.innerHTML = '';
+
+                    if (typeof particlesJS === 'function') {
+                        particlesJS('particles-js', {
+                            particles: {
+                                number: {
+                                    value: t === 'm' ? 14 : t === 't' ? 24 : 34,
+                                    density: { enable: true, value_area: 950 }
+                                },
+                                color: {
+                                    value: ['#8B85F3', '#7C6FE8', '#B0A6FF', '#6B85DE', '#A3B8FF', '#F5B54A']
+                                },
+                                shape: { type: 'circle' },
+                                opacity: {
+                                    value: 0.45,
+                                    random: true,
+                                    anim: { enable: !reduced, speed: 0.5, opacity_min: 0.15, sync: false }
+                                },
+                                size: {
+                                    value: 2.2,
+                                    random: true,
+                                    anim: { enable: !reduced, speed: 0.8, size_min: 0.8, sync: false }
+                                },
+                                line_linked: {
+                                    enable: true,
+                                    distance: t === 'm' ? 85 : t === 't' ? 105 : 125,
+                                    color: '#7C8AE8',
+                                    opacity: 0.16,
+                                    width: 1
+                                },
+                                move: {
+                                    enable: !reduced,
+                                    speed: reduced ? 0 : 0.8,
+                                    direction: 'none',
+                                    random: false,
+                                    straight: false,
+                                    out_mode: 'out',
+                                    bounce: false
+                                }
+                            },
+                            interactivity: {
+                                detect_on: 'canvas',
+                                events: {
+                                    onhover: { enable: !reduced, mode: 'repulse' },
+                                    onclick: { enable: !reduced, mode: 'push' },
+                                    resize: false
+                                },
+                                modes: {
+                                    repulse: { distance: 95, duration: 0.4 },
+                                    push: { particles_nb: 2 }
+                                }
+                            },
+                            retina_detect: false
+                        });
+                    }
+                } catch (e) { }
+            },
+            pause() {
+                (window.pJSDom || []).forEach(d => {
+                    const f = d?.pJS?.fn;
+                    if (f?.drawAnimFrame) {
+                        (window.cancelRequestAnimFrame || cancelAnimationFrame)(f.drawAnimFrame);
+                        f.drawAnimFrame = null;
+                    }
+                });
+            },
+            resume() {
+                if (reduced) return;
+                (window.pJSDom || []).forEach(d => {
+                    const p = d?.pJS;
+                    if (p && !p.fn.drawAnimFrame && p.particles?.move?.enable) {
+                        p.fn.drawAnimFrame = (window.requestAnimFrame || requestAnimationFrame)(p.fn.vendors.draw);
+                    }
+                });
+            }
+        };
+
+        window.Globe3D = Globe3D;
+        window.Particles = Particles;
+
+        /* ==========================================================================
+           Seamless Marquee & Responsive Lifecycle Setup
+           ========================================================================== */
+        (function () {
+            const hero = document.getElementById('hero');
+            const box = document.getElementById('identity');
+            const track = document.getElementById('ticker-track');
+
+            const ITEMS = [
+                { label: 'COMPLIANCE', href: '#compliance' },
+                { label: 'AUDIT', href: '#audit' },
+                { label: 'GAP ASSESSMENT', href: '#gap-assessment' },
+                { label: 'READINESS', href: '#readiness' },
+                { label: 'GOVERNANCE', href: '#governance' },
+                { label: 'RISK', href: '#risk' },
+                { label: 'ASSURANCE', href: '#assurance' },
+                { label: 'INTERNAL AUDIT', href: '#internal-audit' },
+                { label: 'CERTIFICATION READINESS', href: '#certification-readiness' },
+                { label: 'CONTROL ASSESSMENT', href: '#control-assessment' }
+            ];
+
+            const DIAMOND_SEPARATOR = '<span class="ticker-separator" aria-hidden="true">' +
+                '<svg viewBox="0 0 14 14" width="12" height="12" fill="none">' +
+                '<path d="M7 1 L13 7 L7 13 L1 7 Z" fill="rgba(139,133,243,.25)" stroke="#8B85F3" stroke-width="1.4"/>' +
+                '<circle cx="7" cy="7" r="1.6" fill="#F5B54A"/>' +
+                '</svg>' +
+                '</span>';
+
+            const seq = ITEMS.map(it => '<a href="' + it.href + '">' + it.label + '</a>' + DIAMOND_SEPARATOR).join('');
+            let lastW = 0;
+
+            function buildMarquee(force) {
+                if (!box || !track) return;
+                const w = box.clientWidth || innerWidth;
+                if (!force && Math.abs(w - lastW) < 2) return;
+                lastW = w;
+                track.innerHTML = '';
+
+                const g1 = document.createElement('div');
+                g1.className = 'ticker-group';
+                g1.innerHTML = seq;
+                track.appendChild(g1);
+
+                let gw = g1.getBoundingClientRect().width || 1;
+                const reps = Math.max(1, Math.ceil((w * 1.15) / gw));
+                if (reps > 1) {
+                    g1.innerHTML = seq.repeat(reps);
+                    gw = g1.getBoundingClientRect().width || 1;
+                }
+
+                const g2 = g1.cloneNode(true);
+                g2.setAttribute('aria-hidden', 'true');
+                g2.querySelectorAll('a').forEach(a => a.tabIndex = -1);
+                track.appendChild(g2);
+
+                track.style.setProperty('--dist', gw.toFixed(2) + 'px');
+                track.style.setProperty('--dur', (gw / 42).toFixed(2) + 's');
+            }
+
+            // Initialize systems
+            Globe3D.init();
+            buildMarquee(true);
+            Particles.init();
+
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => { buildMarquee(true); });
+            }
+
+            let rz = null;
+            const onResize = () => {
+                cancelAnimationFrame(rz);
+                rz = requestAnimationFrame(() => {
+                    Particles.init();
+                    buildMarquee(false);
+                });
+            };
+
+            if (window.ResizeObserver && hero) {
+                const ro = new ResizeObserver(onResize);
+                ro.observe(hero);
+            } else {
+                addEventListener('resize', onResize, { passive: true });
+            }
+
+            function updateVisibility(visible) {
+                if (hero) hero.classList.toggle('is-paused', !visible);
+                if (visible) {
+                    Particles.resume();
+                    Globe3D.start();
+                } else {
+                    Particles.pause();
+                    Globe3D.stop();
+                }
+            }
+
+            let lastV = null;
+            if ('IntersectionObserver' in window && hero) {
+                new IntersectionObserver(es => {
+                    const en = es[es.length - 1];
+                    const v = en.isIntersecting && en.intersectionRatio > 0.05;
+                    if (v === lastV) return;
+                    lastV = v;
+                    updateVisibility(v && !document.hidden);
+                }, { threshold: [0, 0.05, 0.1], rootMargin: '100px' }).observe(hero);
+            }
+
+            document.addEventListener('visibilitychange', () => {
+                const isHidden = document.hidden;
+                document.body.classList.toggle('is-hidden', isHidden);
+                if (isHidden) {
+                    updateVisibility(false);
+                } else if (lastV !== false) {
+                    updateVisibility(true);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
